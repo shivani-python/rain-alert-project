@@ -1,5 +1,5 @@
 import smtplib
-
+import getpass
 import requests
 MY_LATITUDE = 16.898001
 MY_LONGITUDE = 81.674698
@@ -27,7 +27,7 @@ for num in range(0,3):
         will_rain = True
 if will_rain:
     MY_EMAIL = input("Enter email: ")
-    MY_PASSWORD = input("Enter password: ")
+    MY_PASSWORD = getpass.getpass("Enter password: ")
     connection = smtplib.SMTP("smtp.gmail.com")
     connection.starttls()
     connection.login(MY_EMAIL,MY_PASSWORD)
