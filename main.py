@@ -4,7 +4,7 @@ import requests
 MY_LATITUDE = 16.898001
 MY_LONGITUDE = 81.674698
 API_ENDPOINT = "https://api.openweathermap.org/data/2.5/forecast"
-API_KEY = "022f6f0fc25ea87018424cfbaaca5728"
+API_KEY = input("Enter API key: ")
 weather_params ={
     "lat":MY_LATITUDE,
     "lon":MY_LONGITUDE,
@@ -26,8 +26,8 @@ for num in range(0,3):
     if weather_id < 700:
         will_rain = True
 if will_rain:
-    MY_EMAIL = "sivaniborra18@gmail.com"
-    MY_PASSWORD = " "
+    MY_EMAIL = input("Enter email: ")
+    MY_PASSWORD = input("Enter password: ")
     connection = smtplib.SMTP("smtp.gmail.com")
     connection.starttls()
     connection.login(MY_EMAIL,MY_PASSWORD)
